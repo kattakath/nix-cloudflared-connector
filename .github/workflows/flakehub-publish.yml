@@ -25,6 +25,6 @@ jobs:
             experimental-features = nix-command flakes
       - uses: DeterminateSystems/flakehub-push@v6
         with:
-          name: ismailkattakath/nix-cloudflared-connector
+          name: kattakath/nix-cloudflared-connector
           visibility: public
           rolling: true
