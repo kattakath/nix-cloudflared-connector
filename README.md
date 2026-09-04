@@ -1,6 +1,6 @@
 # nix-cloudflared-connector
 
-[![CI](https://github.com/ismailkattakath/nix-cloudflared-connector/actions/workflows/ci.yml/badge.svg)](https://github.com/ismailkattakath/nix-cloudflared-connector/actions/workflows/ci.yml)
+[![CI](https://github.com/kattakath/nix-cloudflared-connector/actions/workflows/ci.yml/badge.svg)](https://github.com/kattakath/nix-cloudflared-connector/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
 [![Built with Nix](https://img.shields.io/badge/built%20with-Nix-5277C3.svg?logo=nixos&logoColor=white)](https://nixos.org)
 
@@ -30,7 +30,7 @@ NixOS config. This is a small, hardened `systemd` unit for exactly that.
 
 ```nix
 {
-  inputs.cloudflared-connector.url = "github:ismailkattakath/nix-cloudflared-connector";
+  inputs.cloudflared-connector.url = "github:kattakath/nix-cloudflared-connector";
 
   # in your nixosSystem modules:
   #   cloudflared-connector.nixosModules.default
