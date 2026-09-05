@@ -21,7 +21,6 @@
       forAll = systems: f: lib.genAttrs systems (system: f system nixpkgs.legacyPackages.${system});
     in
     {
-      # The reusable NixOS module.
       nixosModules.cloudflared-connector = ./modules/cloudflared-connector.nix;
       nixosModules.default = self.nixosModules.cloudflared-connector;
 
