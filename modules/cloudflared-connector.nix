@@ -34,7 +34,13 @@ in
     package = lib.mkPackageOption pkgs "cloudflared" { };
 
     tokenFile = lib.mkOption {
-      type = lib.types.path;
+      # str, NOT path. A Nix PATH literal is copied into /nix/store at
+      # evaluation, which would put the tunnel token in a world-readable store
+      # path — the exact outcome the description below promises to avoid. As a
+      # string the value is only ever resolved at runtime by systemd, and a
+      # consumer that mistakenly passes a path literal now fails to evaluate
+      # instead of silently leaking.
+      type = lib.types.str;
       default = "/etc/secrets/cloudflared-token";
       example = "/run/agenix/cloudflared-token";
       description = ''
